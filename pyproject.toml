@@ -1,0 +1,29 @@
+[project]
+name = "chinese-idiom-embedding"
+version = "0.1.0"
+description = "Metric LLM embedding performance for Chinese idioms."
+authors = [
+    {name = "Tseing", email = "im.yczeng@foxmail.com"},
+]
+dependencies = [
+    "torch==2.1.0",
+    "transformers>=4.44.2",
+    "numpy==1.26.2",
+    "umap-learn>=0.5.6",
+    "accelerate>=0.34.2",
+    "jaxtyping>=0.2.34",
+    "adjustText>=1.2.0",
+]
+requires-python = "==3.9.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
+
+[tool.black]
+line-length = 100
+
+[tool.mypy]
+ignore_missing_imports = true
