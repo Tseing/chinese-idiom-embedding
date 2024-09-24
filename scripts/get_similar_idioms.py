@@ -51,11 +51,11 @@ def match_idioms(
 
 if __name__ == "__main__":
     # Config
-    model_label = ModelLabel.GteQwen2
-    chunk_size = 32
+    model_label = ModelLabel.Xiaobu
+    chunk_size = 256
     topk = 5
 
-    # gen_text_vectors(model_label)
+    gen_text_vectors(model_label)
 
     idioms = pd.read_csv("data/idioms.csv")["word"].to_list()
     idiom_vectors = pickle.load(open(f"output/{model_label.value}_vectors.pkl", "rb"))

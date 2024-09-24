@@ -13,6 +13,7 @@ dependencies = [
     "accelerate>=0.34.2",
     "jaxtyping>=0.2.34",
     "adjustText>=1.2.0",
+    "sentence-transformers>=3.1.1",
 ]
 requires-python = "==3.9.*"
 readme = "README.md"

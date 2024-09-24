@@ -1,6 +1,7 @@
 *.json
 *.pkl
 data/idiom-database/*
+kernel_*/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -6,6 +6,7 @@ from typing import List
 import torch
 import torch_npu
 from numpy.typing import NDArray
+from sentence_transformers import SentenceTransformer
 from sklearn.preprocessing import normalize
 from torch.functional import F
 from transformers import AutoModel, AutoTokenizer
@@ -16,6 +17,8 @@ class ModelLabel(Enum):
     Tao = "tao-8k"
     GteLargeZh = "gte-large-zh"
     GteQwen2 = "gte-Qwen2-7B-instruct"
+    Conan = "Conan-embedding-v1"
+    Xiaobu = "xiaobu-embedding-v2"
 
 
 class EmbeddingModel(ABC):
@@ -113,3 +116,15 @@ class GteQwenEmbedding(EmbeddingModel):
     @staticmethod
     def get_detailed_instruct(task_description: str, query: str) -> str:
         return f"Instruct: {task_description}\nQuery: {query}"
+
+
+class XiaobuEmebdding(EmbeddingModel):
+    def __init__(self, model_dir: str, device: torch.device) -> None:
+        super().__init__()
+        self.model = SentenceTransformer(model_dir, device=device)
+        self.device = device
+
+    def __call__(self, input_texts: List[str]) -> NDArray:
+        vectors = self.model.encode(input_texts, normalize_embeddings=True)
+
+        return vectors

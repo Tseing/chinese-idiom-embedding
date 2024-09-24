@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["cross_platform", "inherit_metadata"]
 lock_version = "4.4.1"
-content_hash = "sha256:314611500491e0c329162b9a2e76c61435de046b815b548f2a7ae6facf1aa85f"
+content_hash = "sha256:c7daacae44b2ea52b09ab9e958988c897053ea3a30746c53f983e8dde4d8d07e"
 
 [[package]]
 name = "accelerate"
@@ -683,6 +683,26 @@ files = [
     {file = "scipy-1.13.1-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:a014c2b3697bde71724244f63de2476925596c24285c7a637364761f8710891c"},
     {file = "scipy-1.13.1-cp39-cp39-win_amd64.whl", hash = "sha256:392e4ec766654852c25ebad4f64e4e584cf19820b980bc04960bca0b0cd6eaa2"},
     {file = "scipy-1.13.1.tar.gz", hash = "sha256:095a87a0312b08dfd6a6155cbbd310a8c51800fc931b8c0b84003014b874ed3c"},
+]
+
+[[package]]
+name = "sentence-transformers"
+version = "3.1.1"
+requires_python = ">=3.8"
+summary = "State-of-the-Art Text Embeddings"
+groups = ["default"]
+dependencies = [
+    "Pillow",
+    "huggingface-hub>=0.19.3",
+    "scikit-learn",
+    "scipy",
+    "torch>=1.11.0",
+    "tqdm",
+    "transformers<5.0.0,>=4.38.0",
+]
+files = [
+    {file = "sentence_transformers-3.1.1-py3-none-any.whl", hash = "sha256:c73bf6f17e3676bb9372a6133a254ebfb5907586b470f2bac5a840c64c3cf97e"},
+    {file = "sentence_transformers-3.1.1.tar.gz", hash = "sha256:8f00020ef4ad6b918475c38af545c22f61403b67eb22d994860bab06902db160"},
 ]
 
 [[package]]
